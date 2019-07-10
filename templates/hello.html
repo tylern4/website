@@ -1,15 +1,18 @@
 <!doctype html5>
+
 <style>
-    .body {
-        background-color: cornflowerblue;
+    body {
+        background-image: url("/img/back.png");
+        background-repeat: repeat;
+        background-attachment: fixed;
     }
 
     .table {
         border-spacing: 10;
-        background: rgba(70, 131, 180, 0.116);
+        background: #1018298c;
         text-align: center;
         border-radius: 10px;
-        border-color: cornflowerblue;
+        border-color: #1018297c;
         overflow: hidden;
         margin: 0 auto;
         position: center;
@@ -26,6 +29,11 @@
         margin-left: auto;
         margin-right: auto;
         width: 10%;
+        color: #a8a8a8;
+    }
+
+    .text {
+        color: azure;
     }
 </style>
 <html>
@@ -33,7 +41,7 @@
 
 
 <body>
-    <h1 class="h1">Hello {{ user }}!</h1>
+    <h1 class="h1">{{ user }}</h1>
 
     <img class="img" src={{ body.avatar_url }}>
     <br>
@@ -43,13 +51,12 @@
         <table class="table">
             {% for repo in repos %}
             <tr>
-                <td>{{ repo.name }}</td>
-                <td>{{ repo.language}}</td>
+                <td class="text">{{ repo.name }}</td>
+                <td class="text">{{ repo.language}}</td>
             </tr>
             {% endfor %}
         </table>
     </div>
-
 </body>
 
 </html>

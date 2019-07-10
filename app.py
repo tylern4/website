@@ -2,7 +2,10 @@ from flask import Flask, render_template
 import requests
 import os
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__,
+            static_url_path='',
+            static_folder='templates',
+            template_folder='templates')
 
 
 header = {"Authorization": f"token {os.getenv('GITHUB_OAUTH')}"}
