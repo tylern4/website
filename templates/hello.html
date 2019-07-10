@@ -1,0 +1,55 @@
+<!doctype html5>
+<style>
+    .body {
+        background-color: cornflowerblue;
+    }
+
+    .table {
+        border-spacing: 10;
+        background: rgba(70, 131, 180, 0.116);
+        text-align: center;
+        border-radius: 10px;
+        border-color: cornflowerblue;
+        overflow: hidden;
+        margin: 0 auto;
+        position: center;
+    }
+
+    .img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10%;
+    }
+
+    .h1 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 10%;
+    }
+</style>
+<html>
+
+
+
+<body>
+    <h1 class="h1">Hello {{ user }}!</h1>
+
+    <img class="img" src={{ body.avatar_url }}>
+    <br>
+    <br>
+
+    <div>
+        <table class="table">
+            {% for repo in repos %}
+            <tr>
+                <td>{{ repo.name }}</td>
+                <td>{{ repo.language}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</body>
+
+</html>
